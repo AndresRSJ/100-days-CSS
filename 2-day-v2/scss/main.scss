@@ -1,0 +1,78 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+@mixin flex($dis, $direction, $corte, $aling,$just){
+    display: $dis;
+    flex-flow: $direction $corte;
+    align-items: $aling;
+    justify-content: $just;
+}
+
+*{
+    // border: 1px solid black;
+}
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: rgb(255, 255, 255);
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.container__burger{
+    @include flex(flex, column, nowrap, center, space-between);
+
+    width: 3.5rem;
+    height: 2.5rem;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.line{
+    width: 80%;
+    height: 20%;
+
+    background-color: rgb(8, 107, 255);
+    border-radius: 5px;
+
+    box-shadow: 2px 2px 5px rgb(0 0 0/ 0.4);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.translate-1{
+    transform: translateY(200%) rotate(45deg);
+}
+.translate-2{
+    transform: translateX(120%);
+}
+.translate-3{
+    transform: translateY(-200%) rotate(-45deg);
+}
+
+
+
+
+
+
