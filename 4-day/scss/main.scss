@@ -1,0 +1,107 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  font-size: 1rem;
+}
+
+.circle{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+}
+
+.circle__container{
+   position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.circle-3{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+
+    animation-fill-mode: both;
+    animation: scale3 2s  cubic-bezier(.21,.98,.6,.99) infinite alternate;
+}
+.circle-2{
+    position: absolute;
+    width: 4em;
+    height: 4em;
+
+    animation-fill-mode: both;
+    animation: scale2 2s  cubic-bezier(.21,.98,.6,.99) infinite alternate;
+}
+
+.circle-1{
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    animation-fill-mode: both;
+    animation: scale1 2s cubic-bezier(.21,.98,.6,.99) infinite alternate;
+}
+
+
+@keyframes scale1 {
+    0%, 70%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: 4px 4px 8px rgb(0 0 0/ 0.6);
+    }
+}
+@keyframes scale2 {
+    0%, 40%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: 4px 4px 8px rgb(0 0 0/ 0.6);
+    }
+}
+@keyframes scale3 {
+    0%, 10%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: 4px 4px 8px rgb(0 0 0/ 0.6);
+    }
+
+}
+
