@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script defer src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>App de gráficos</title>
+</head>
+<body>
+    <form action="#" class="form__parametros">
+        <div class="container__parametros">
+            <div class="div__parametros">
+                <input type="text" name="" id="" class="parametro" placeholder="Parametro"><input type="number" name="" id="" class="valor" placeholder="Valor">
+            </div>
+            <div class="div__parametros">
+                <input type="text" name="" id="" class="parametro" placeholder="Parametro"><input type="number" name="" id="" class="valor" placeholder="Valor">
+            </div>
+        </div>
+        <div class="div__buttons">
+            <button type="submit" class="addParam">Agregar parámetros</button>
+            <button type="submit" class="showResult">Mostrar gráfico</button>
+        </div>
+    </form>
+    <div class="chart__container">
+        <div class="header">
+            <div class="ventas">Reporte de ventas</div>
+            <div class="recaudacion">
+            </div>
+        </div>
+        <div class="chart">
+            <canvas id="myChart" width="1000px" height="500px"></canvas>
+        </div>
+    </div>
+</body>
+</html>
