@@ -1,0 +1,158 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+
+@mixin flexible ($dis, $direction, $corte, $just, $aling){
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content: $just;
+    align-items: $aling;
+}
+
+$colors:(
+    "white": rgb(255,255,255),
+    "brown": rgb(120,100,80),
+    "ligth-brow": rgb(244,231,222),
+    "gray": rgb(224, 224, 224),
+);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+    background: linear-gradient(RGB(221,158,94), RGB(202,125,78)); 
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  @include flexible(flex, row, nowrap, center, space-between);
+  width: 20rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  color: map-get($colors, "brown");
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+}
+
+.profile{
+    @include flexible(flex, column, nowrap, center, center);
+
+  width: 65%;
+
+  text-align: center;
+
+  background-color: map-get($colors, "white");
+  overflow: hidden;
+
+  border-radius: 5px 0 0 5px;
+}
+.img{
+    @include flexible(flex, column, nowrap, center, center);
+    width: 6em;
+    height: 6em;
+    margin-top: 2rem;
+
+    border-radius: 50%;
+
+    transition: all 0.5s ease-in-out;
+    background: linear-gradient(45deg,rgb(221,158,94), rgb(218, 119, 58)); 
+
+    overflow: hidden;
+}
+.img:hover{
+    background: linear-gradient(45deg,rgb(218, 119, 58), rgb(221,158,94));
+}
+
+.img img{
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 90%;
+    height: 90%;
+
+    border-radius: 50%;
+}
+
+
+.name{
+    margin-top: 1rem;
+
+    font-weight: 600;
+    line-height: 0.5;
+}
+span{
+    font-size: 0.8rem;
+}
+.buttons{
+    width: 100%;
+    margin: 1rem 0;
+    margin-left: 0.7em;
+}
+.buttons input{
+    width: 50%;
+    padding: 0.3em 1em;
+
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    border: 1px solid map-get($colors , "brown" );
+    border-radius: 15px;
+}
+.buttons input:hover{
+    transition: all 0.3s ease-in-out;
+    background-color: map-get($colors , "brown");;
+    color: map-get($colors , "white");
+}
+
+.links{
+    @include flexible(flex, column, nowrap, space-between, center);
+    width: 35%;
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 0px 5px 5px 0px;
+}
+.link{
+    @include flexible(flex, column, nowrap, center, center);
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1px;
+
+    background-color: map-get($colors, "ligth-brow");
+}
+.link:hover{
+    transition: background-color 0.3s ease-in-out;
+    background-color: map-get($colors, "gray")
+}
+.link span{
+    width: 100%;
+}
+.number{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
