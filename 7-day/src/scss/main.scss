@@ -1,0 +1,167 @@
+ @mixin flexible($dis, $direction, $corte, $just, $aling ){
+    display: $dis;
+    direction: $direction $corte;
+    justify-content: $just;
+    align-items: $aling;
+ }
+ @mixin neumorphism ( $radius , $eje ) {
+    border-radius: $radius;
+    background: #f8f7f7;
+    box-shadow:  $eje $eje ($eje*1.5) #e0e0e0,
+               (-$eje)(-$eje) ($eje*1.5) #d6d6d6,
+}
+
+ $fonts-size:(
+    "extra-small": 0.75em,
+    "small": 0.9em,
+    "medium": 1em,
+    "big": 1.1em,
+ );
+ $colors:(
+    "white": white,
+    "light-white": rgb(244,247,250),
+    "light-blue": rgb(95,152,205),
+    "light-blue-2":   rgb(147,178,205),
+    "dark-blue": rgb(67,98,125),
+    "dark-blue-2": rgb(56,82,105),
+    "gray": rgb(102,102,102),
+ );
+ $transition:(
+    "transition-1": all 0.3s ease,
+    "transition-2": all 0.5s ease,
+    "transition-3": all 0.7s ease,
+ );
+ 
+
+body{
+    @include flexible(flex, row, wrap, center, center)
+}
+
+.frame {
+    position: relative;
+    width: 25em;
+    height: 25em;
+    border-radius: 2px;
+      box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+      overflow: hidden;
+    background: #fff;
+    color: #333;
+      font-family: 'Open Sans', Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+
+.nots {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    margin-top: -8.5em;
+    margin-left: -8.5em;
+
+    @include neumorphism(15px, 5px);
+
+    width: 17rem;
+
+    overflow: hidden;
+
+    transition: map-get($transition, "transition-3");
+
+    &__header {
+        @include flexible(flex, row, nowrap, space-between, center);
+
+        padding: 1em 0.5em;
+
+        background-color: map-get($colors, "light-blue");
+        color: map-get($colors, "white");
+
+        font-size: map-get($fonts-size, "small");
+    }
+    &__h3 {
+        font-weight: 600;
+        letter-spacing: 0.07em;
+    }
+    &__burger,
+    &__lupa {
+        color: rgb(178,218,255);
+        font-size: 1.7em;
+        &:hover{
+            color: map-get($colors, "white");
+        }
+    }
+
+    
+
+    &__ul {
+        margin: 0.5em 2em;
+
+        color: map-get($colors, "gray");
+    }
+    &__not {
+        margin-bottom: 0.7em;
+        transition: map-get($transition, "transition-1");
+        &:hover{
+            color: map-get($colors, "light-blue");
+        }
+    }
+    &__p {
+        font-size: map-get($fonts-size, "small");
+    }
+    &__span {
+        font-size: map-get($fonts-size, "extra-small");
+    }
+    &__name{
+        font-weight: 600;
+    }
+   
+}
+.options {
+    position: absolute;
+    z-index: 10;
+    top: 15%;
+    left: 16%;
+    // margin-top: -3em;
+    // margin-left: -6em;
+
+    @include neumorphism(15px, 3px);
+
+    width: 12em;
+
+    overflow: hidden;
+
+    background-color: map-get($colors, "dark-blue");
+
+    transition: map-get($transition, "transition-3");
+
+    &__a {
+        width: 100%;
+        padding: 1em;
+        
+        color: map-get($colors, "light-blue-2");
+
+        transition: map-get($transition, "transition-2");
+
+        &:hover{
+            background-color: map-get($colors, "dark-blue-2");
+            color: map-get($colors, "light-white")
+        }
+    }
+    &:first-child{
+        margin-top: 1em;
+    }
+    &:last-child{
+        margin-bottom: 1em;
+    }
+    &__span {
+        font-size: map-get($fonts-size, "small");
+
+        margin-left: 0.7em;
+    }
+}
+/*Translates de los contenedores notifi y options*/
+.translate-1{
+    transform: translateX(50%);
+}
+.translate-2{
+    transform: translateX(-10%);
+}

@@ -1,0 +1,121 @@
+body {
+  display: flex;
+  direction: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame {
+  position: relative;
+  width: 25em;
+  height: 25em;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nots {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  margin-top: -8.5em;
+  margin-left: -8.5em;
+  border-radius: 15px;
+  background: #f8f7f7;
+  box-shadow: 5px 5px 7.5px #e0e0e0, -5px -5px 7.5px #d6d6d6;
+  width: 17rem;
+  overflow: hidden;
+  transition: all 0.7s ease;
+}
+.nots__header {
+  display: flex;
+  direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0.5em;
+  background-color: rgb(95, 152, 205);
+  color: white;
+  font-size: 0.9em;
+}
+.nots__h3 {
+  font-weight: 600;
+  letter-spacing: 0.07em;
+}
+.nots__burger, .nots__lupa {
+  color: rgb(178, 218, 255);
+  font-size: 1.7em;
+}
+.nots__burger:hover, .nots__lupa:hover {
+  color: white;
+}
+.nots__ul {
+  margin: 0.5em 2em;
+  color: rgb(102, 102, 102);
+}
+.nots__not {
+  margin-bottom: 0.7em;
+  transition: all 0.3s ease;
+}
+.nots__not:hover {
+  color: rgb(95, 152, 205);
+}
+.nots__p {
+  font-size: 0.9em;
+}
+.nots__span {
+  font-size: 0.75em;
+}
+.nots__name {
+  font-weight: 600;
+}
+
+.options {
+  position: absolute;
+  z-index: 10;
+  top: 15%;
+  left: 16%;
+  border-radius: 15px;
+  background: #f8f7f7;
+  box-shadow: 3px 3px 4.5px #e0e0e0, -3px -3px 4.5px #d6d6d6;
+  width: 12em;
+  overflow: hidden;
+  background-color: rgb(67, 98, 125);
+  transition: all 0.7s ease;
+}
+.options__a {
+  width: 100%;
+  padding: 1em;
+  color: rgb(147, 178, 205);
+  transition: all 0.5s ease;
+}
+.options__a:hover {
+  background-color: rgb(56, 82, 105);
+  color: rgb(244, 247, 250);
+}
+.options:first-child {
+  margin-top: 1em;
+}
+.options:last-child {
+  margin-bottom: 1em;
+}
+.options__span {
+  font-size: 0.9em;
+  margin-left: 0.7em;
+}
+
+/*Translates de los contenedores notifi y options*/
+.translate-1 {
+  transform: translateX(50%);
+}
+
+.translate-2 {
+  transform: translateX(-10%);
+}
+
+/*# sourceMappingURL=main.css.map */
